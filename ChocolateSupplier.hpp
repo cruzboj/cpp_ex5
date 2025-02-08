@@ -3,13 +3,15 @@
 #include <cstring>
 #include "SugarSupplier.hpp"
 
-class ChocolateSupplier : public SugarSupplier {
+class ChocolateSupplier : public virtual SugarSupplier {
     private:
         char* chocolateName;
+
     public:
         ChocolateSupplier(const char* supplierName);
         ~ChocolateSupplier();
-
+        const char* getChocolateName() const { return chocolateName; };
+        void supplyChocolate();
 };
 
 ChocolateSupplier::~ChocolateSupplier() {
@@ -20,5 +22,7 @@ ChocolateSupplier::ChocolateSupplier(const char* supplierName) : SugarSupplier(s
     chocolateName = new char[length + 1];
     strcpy(chocolateName, supplierName);
 }
-
+void ChocolateSupplier::supplyChocolate(){
+    std::cout << "[" << chocolateName << "]" << " is supplying sugar." << std::endl;
+}
 #endif

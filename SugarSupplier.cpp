@@ -1,20 +1,5 @@
-#ifndef SUGARSUPPLIER_HPP
-#define SUGARSUPPLIER_HPP
-using namespace std;
-#include <cstring>
-
-class SugarSupplier {
-    private:
-        char* supplier;
-
-    public:
-        SugarSupplier(const char* supplierName);
-        virtual ~SugarSupplier();
-        const char* getSugarName() const { return supplier; };
-        void setSugarName(const char* newName);
-        void supplySugar();
-};
-
+#include "SugarSupplier.hpp"
+#include <iostream>
 
 SugarSupplier::~SugarSupplier() {
     delete[] supplier;
@@ -35,5 +20,3 @@ void SugarSupplier::setSugarName(const char* newName) {
 void SugarSupplier::supplySugar(){
     std::cout << "[" << supplier << "]" << " is supplying sugar." << std::endl;
 }
-
-#endif
