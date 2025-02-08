@@ -1,6 +1,7 @@
 #ifndef CHOCOLATE_SUPPLIER_HPP
 #define CHOCOLATE_SUPPLIER_HPP
 #include <cstring>
+#include <iostream>
 #include "SugarSupplier.hpp"
 
 class ChocolateSupplier : public virtual SugarSupplier {
